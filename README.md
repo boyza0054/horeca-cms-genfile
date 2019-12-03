@@ -18,7 +18,7 @@ For repository patten design under `Laravel framework`
 - can generate migration file
 # Installation 
 ```php
-composer require boynii/lumpineevill 
+composer require boynii/horeca-cms-generator 
 ```
 # Laravel 5.*: Serviceprovider
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
@@ -28,7 +28,6 @@ Lumpineevill\ServiceProvider\LumpineevillServiceProvider::class
 # Command
 ```php
 $ php artisan boynii:genfile 
-$ php artisan boynii:genfront
 ```
 # copy environment
  append `.env` file 

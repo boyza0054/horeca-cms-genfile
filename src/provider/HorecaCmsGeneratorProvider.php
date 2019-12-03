@@ -22,12 +22,28 @@ class HorecaCmsGeneratorProvider extends ServiceProvider
     /**
      *
      */
-    public function boot()
+    public function register()
     {
         $this->publishes([
-            __DIR__.'/../config/generate.php' => config_path('generate.php'),
-        ],'config');
-
-        $this->commands($this->command);
+            __DIR__ . '/../Config/Form.php' => config_path('Form.php'),
+            __DIR__ . '/../Config/front.php' => config_path('front.php'),
+        ]);
+        $this->mergeConfigFrom(
+            __DIR__ . '/../Config/Form.php', 'Form'
+        );
+        $this->mergeConfigFrom(
+            __DIR__ . '/../Config/front.php', 'front'
+        );
+    }
+    /**
+     * booting application
+     * @return [type] [description]
+     */
+    public function boot()
+    {
+        # add routing
+        require __DIR__ . '/../Http/Routing.php';
+        # add commnads
+        $this->commands($this->commands);
     }
 }
