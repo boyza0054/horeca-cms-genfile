@@ -2,9 +2,9 @@
 
 namespace Samark\Lumpineevill\Tests;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+class ExampleTest extends \PHPUnit_Framework_TestCase
 {
-    public function testExample()
+    public function testCheckList()
     {
         $this->assertTrue(true);
     }
