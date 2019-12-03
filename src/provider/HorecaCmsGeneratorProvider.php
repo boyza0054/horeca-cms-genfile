@@ -2,7 +2,7 @@
 
 namespace HorecaCmsGenerator\Provider;
 
-use LumenApiGenerator\Command\GenerateFileCommand;
+use HorecaCmsGenerator\Command\GenerateFileCommand;
 use Illuminate\Support\ServiceProvider;
 
 /**
