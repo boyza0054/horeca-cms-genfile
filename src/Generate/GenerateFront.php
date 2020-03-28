@@ -13,31 +13,31 @@ class GenerateFront extends GenerateFile
      */
     protected $configPath = [
         'Controller' => [
-            'resource' => 'TemplateFront/Controller.php',
+            'resource' => 'TemplateBackoffice/Controller.php',
             'target' => 'app/Http/Controllers/',
         ],
         'Request' => [
-            'resource' => 'TemplateFront/Request.php',
+            'resource' => 'TemplateBackoffice/Request.php',
             'target' => 'app/Http/Requests/',
         ],
         'PostRequest' => [
-            'resource' => 'TemplateFront/PostRequest.php',
+            'resource' => 'TemplateBackoffice/PostRequest.php',
             'target' => 'app/Http/Requests/',
         ],
         'AjaxRequest' => [
-            'resource' => 'TemplateFront/AjaxRequest.php',
+            'resource' => 'TemplateBackoffice/AjaxRequest.php',
             'target' => 'app/Http/Requests/',
         ],
         'Repository' => [
-            'resource' => 'TemplateFront/Repository.php',
+            'resource' => 'TemplateBackoffice/Repository.php',
             'target' => 'app/Repository/',
         ],
         'Interface' => [
-            'resource' => 'TemplateFront/Interface.php',
+            'resource' => 'TemplateBackoffice/Interface.php',
             'target' => 'app/Repository/',
         ],
         'Route' => [
-            'resource' => 'TemplateFront/Route.php',
+            'resource' => 'TemplateBackoffice/Route.php',
             'target' => 'app/Http/Routes/Web/',
         ],
     ];
@@ -115,7 +115,7 @@ class GenerateFront extends GenerateFile
      */
     public function writeViewBlade()
     {
-        $dir = __DIR__ . '/TemplateFront/view/';
+        $dir = __DIR__ . '/TemplateBackoffice/view/';
         foreach (scandir($dir) as $key => $value) {
             if (!in_array($value, ['..', '.'])) {
                 $read = file_get_contents($dir . $value);
