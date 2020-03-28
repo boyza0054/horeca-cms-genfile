@@ -58,49 +58,4 @@ class {replace}Controller extends Controller
     {
         return $this->{replace_sm}->getFormDetail($request->id);
     }
-
-    /**
-     * submit create {replace} data to api
-     * @param  Create{replace}Request $request
-     * @return redirect back with flash success
-     */
-    public function submitForm{replace}Create(Create{replace}Request $request)
-    {
-        $response = $this->{replace_sm}->createDataApi($request->all());
-        if ($response->header->code != 200) {
-            return redirect()->back()->withErrors($response->data);
-        }
-        return redirect()->route('{replace_sm}.view')
-            ->withFlashSuccess('create {replace_sm} data success');
-    }
-
-    /**
-     * submit update {replace} data to api
-     * @param  Update{replace}Request $request
-     * @return redirect back with flash success
-     */
-    public function submitForm{replace}Update(Update{replace}Request $request)
-    {
-        $response = $this->{replace_sm}->updateDataApi($request->id, $request->all());
-        if ($response->header->code != 200) {
-            return redirect()->back()->withErrors($response->data);
-        }
-        return redirect()->route('{replace_sm}.view')
-            ->withFlashSuccess('update {replace_sm} data success');
-    }
-
-    /**
-     * submit delete {replace} data to api
-     * @param  Delete{replace}Request $request
-     * @return redirect back with flash success
-     */
-    public function submitForm{replace}Delete(Delete{replace}Request $request)
-    {
-        $response = $this->{replace_sm}->deleteDataApi($request->id);
-        if ($response->header->code != 200) {
-            return redirect()->back()->withErrors($response->data);
-        }
-        return redirect()->route('{replace_sm}.view')
-            ->withFlashSuccess('delete {replace_sm} data success');
-    }
 }
